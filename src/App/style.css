@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2thhwf');
+  src:  url('fonts/icomoon.eot?2thhwf#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2thhwf') format('truetype'),
+    url('fonts/icomoon.woff?2thhwf') format('woff'),
+    url('fonts/icomoon.svg?2thhwf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+
+.AddButton{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius:50%;
+  
+}
+
+.TodoSearch{
+  margin-left:none;
+  margin-right:none;
+  border-radius: 5px;
+  font-style: italic;
+  padding: 10px;
+  width: inherit;
+  border: 1px solid #ccc;
+  /* color: #a9a9a9; */
+  outline: none;
+  /* box-shadow: 0px 0px 5px #a9a9a9; */
+}

@@ -1,0 +1,37 @@
+.TodoItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  /* cursor: pointer; */
+  border: 1px solid #ccc;
+  border-radius:5px;
+  margin-bottom: 5px;
+}
+.Icon{
+  /* display: inline-block; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* border-radius: 50%; */
+  cursor: pointer;
+  /* padding:2px; */
+  color: #ccc;
+}
+
+.checked{
+  color: green;
+}
+
+.text-checked{
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.ChekItem:hover{
+  color: green;
+}
+
+.DeleteItem:hover{
+  color: red;
+}
