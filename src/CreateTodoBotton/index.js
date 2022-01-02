@@ -1,16 +1,14 @@
 import React from "react";
+import { TodoContext } from "../TodoContext";
 
 function CreateTodoBotton() {
-  const onClickButton = (msg) => {
-    alert(msg);
-  }
+  const { setShowModal } = React.useContext(TodoContext);
 
   return (
-    <button
-      className="AddButton"
-      onClick={() => onClickButton("Aqui debería ir el modal")}
-    >+</button>
+    <button className="AddButton" onClick={() => setShowModal(true)}>
+      +
+    </button>
   );
 }
 
-export {CreateTodoBotton};
+export { CreateTodoBotton };
