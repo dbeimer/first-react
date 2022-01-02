@@ -1,28 +1,21 @@
 import React from "react";
 import "./style.css";
 
+import { TodoContext } from "../TodoContext";
 import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
 import { TodoList } from "../TodoList";
 import { TodoItem } from "../TodoItem";
 import { CreateTodoBotton } from "../CreateTodoBotton";
 
-function AppUI({
-  loading,
-  error,
-  totalTodos,
-  completedTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodos,
-  deleteTodos,
-}) {
+function AppUI() {
+  const { error, loading, searchedTodos, completeTodos, deleteTodos } =
+    React.useContext(TodoContext);
+
   return (
     <React.Fragment>
-      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodoCounter />
+      <TodoSearch />
       <TodoList>
         {error && <p>Algo salio mal</p>}
         {loading && <p>Estamos cargando no desesperes...</p>}
@@ -38,6 +31,7 @@ function AppUI({
           />
         ))}
       </TodoList>
+
       <CreateTodoBotton />
     </React.Fragment>
   );
