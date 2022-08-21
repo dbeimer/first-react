@@ -3,11 +3,18 @@ import './TodoItem.css';
 
 function TodoItem(props) {
 
+
   return (
     <li className="TodoItem">
       <span
         className={`Icon icon-checkmark ChekItem ${props.completed ? 'checked' : ''}`}
-        onClick={() => props.onComplete(props.text)}
+        onClick={() => {
+          if (props.completed) {
+            props.onUncheck(props.text)
+          } else {
+            props.onComplete(props.text);
+          }
+        }}
       />
       <span className={props.completed ? 'text-checked' : ''}>{props.text}</span>
       <span
@@ -18,4 +25,4 @@ function TodoItem(props) {
   );
 }
 
-export {TodoItem};
+export { TodoItem };

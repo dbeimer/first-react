@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./style.css";
 
 import { TodoContext } from "../TodoContext";
@@ -11,41 +12,59 @@ import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
 
 function AppUI() {
+
+  //esto esta genial
+  let [darkTheme, setDarkTheme] = useState(false)
+
   const {
     error,
     loading,
     searchedTodos,
     completeTodos,
+    uncheckTodo,
     deleteTodos,
     showModal,
   } = React.useContext(TodoContext);
 
   return (
     <React.Fragment>
-      <TodoCounter />
-      <TodoSearch />
-      <TodoList>
-        {error && <p>Algo salio mal</p>}
-        {loading && <p>Estamos cargando no desesperes...</p>}
-        {!loading && !searchedTodos.length && <p>!Crea tu primer todo!</p>}
+      <div className="container">
+        <button onClick={() => {
+          let mainDocument = window.document.documentElement;
+          mainDocument.setAttribute('data-theme', !darkTheme ? 'dark' : 'light')
+          setDarkTheme(!darkTheme)
+        }} className="button">{!darkTheme ? 'Dark' : 'Light'}</button>
+      </div>
 
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={completeTodos}
-            onDelete={deleteTodos}
-          />
-        ))}
-      </TodoList>
+
+      <TodoCounter />
+
+      <div className="container">
+        <TodoSearch />
+        <TodoList>
+          {error && <p>Algo salio mal</p>}
+          {loading && <p>Estamos cargando no desesperes...</p>}
+          {!loading && !searchedTodos.length && <p>!Crea tu primer todo!</p>}
+
+          {searchedTodos.map((todo) => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onComplete={completeTodos}
+              onUncheck={uncheckTodo}
+              onDelete={deleteTodos}
+            />
+          ))}
+        </TodoList>
+        <CreateTodoBotton />
+      </div>
       {showModal && (
         <Modal>
           <TodoForm />
         </Modal>
       )}
 
-      <CreateTodoBotton />
     </React.Fragment>
   );
 }

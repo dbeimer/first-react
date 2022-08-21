@@ -5,9 +5,12 @@
   justify-content: space-between;
   padding: 0.5rem;
   /* cursor: pointer; */
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius:5px;
   margin-bottom: 5px;
+}
+.TodoItem:hover{
+  background-color:var(--color-gray-6);
 }
 .Icon{
   /* display: inline-block; */
@@ -16,22 +19,22 @@
   /* border-radius: 50%; */
   cursor: pointer;
   /* padding:2px; */
-  color: #ccc;
+  color:var(--color-gray-1);
 }
 
 .checked{
-  color: green;
+  color:var(--color-primary);
 }
 
 .text-checked{
   text-decoration: line-through;
-  color: #ccc;
+  color:var(--color-gray-4);
 }
 
 .ChekItem:hover{
-  color: green;
+  color:var(--color-primary-focus);
 }
 
 .DeleteItem:hover{
-  color: red;
+  color:var(--color-error);
 }

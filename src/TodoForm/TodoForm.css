@@ -3,25 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background:var(--color-background);
+  border: 1px solid var(--color-border);
   padding: 10px 30px;
   border-radius: 5px;
-}
-.modal-content .btn-add{
-  background: #00bcd4;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-
-}
-
-.modal-content .btn-cancel{
-  background: #f44336;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
 }

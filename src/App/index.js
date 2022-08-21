@@ -1,6 +1,7 @@
 import React from "react";
-import { TodoProvider } from "../TodoContext";
-import { AppUI } from "./AppUI";
+import {TodoProvider} from "../TodoContext";
+import {AppUI} from "./AppUI";
+import 'feathercss/dist/feather.css'
 
 function App() {
   return (

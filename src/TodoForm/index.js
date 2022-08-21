@@ -1,7 +1,6 @@
 import React from "react";
 import "./TodoForm.css";
 import { TodoContext } from "../TodoContext";
-
 function TodoForm() {
   const { setShowModal, addTodo } = React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
@@ -26,8 +25,8 @@ function TodoForm() {
           placeholder="the new Todo..."
         ></textarea>
         <div>
-          <button className="btn-add">Add</button>
-          <button type="button" onClick={onCancel}>
+          <button className="primary-button">Add</button>
+          <button className="button" type="button" onClick={onCancel}>
             Cancel
           </button>
         </div>

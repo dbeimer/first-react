@@ -9,7 +9,7 @@
   font-style: normal;
   font-display: block;
 }
-
+  
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -33,9 +33,8 @@
 }
 
 .AddButton{
-  background-color: #4CAF50;
+  background-color:var(--color-primary);
   border: none;
-  color: white;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
@@ -44,15 +43,19 @@
   
 }
 
+.AddButton:hover{
+  background-color:var(--color-primary-focus);
+}
+
 .TodoSearch{
   margin-left:none;
   margin-right:none;
-  border-radius: 5px;
-  font-style: italic;
-  padding: 10px;
-  width: inherit;
-  border: 1px solid #ccc;
   /* color: #a9a9a9; */
   outline: none;
   /* box-shadow: 0px 0px 5px #a9a9a9; */
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
 }
